@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  filter: grayscale(50%);
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1em #ff7f50);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 1em #5f9ea0);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 2em 0;
+}
+
+.read-the-docs {
+  color: #888;
+  font-style: italic;
+}
+
+.box {
+  background-color: #6a5acd;
+  width: 60vw;
+  margin-bottom: 100px;
+  border: 5px solid #ebebeb;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+  width: 50vw;
+  height: 50px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1.6rem;
+  padding: 10px;
+  margin-bottom: 50px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+strong {
+  font-size: 3rem;
+  color: #333;
+}
+
+small {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.num {
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  font-size: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.button {
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  background-color: #ff6347;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff4500;
+}
+
+.control {
+  font-size: 2rem;
+  color: #333;
+}
