@@ -1,45 +1,43 @@
-import { Component } from 'react';
-import './App.css'
-import khana from "./resources/FoodData"
-import FoodBox from "./components/FoodBox"
+import { Component } from 'react'
+import FoodBox from './component/FoodBox'
+import FoodData from './component/FoodData'
+import "./App.css"
+import Search from './component/Search'
 
-class App extends Component{
+export default class App extends Component {
 
-  constructor(){
-    super();
+  constructor(props) {
+    super(props)
+  
     this.state = {
-      filteredData : [...khana],
+       search: ""
     }
   }
 
-  render(){
+  handleSearch = (value) => {
+    this.setState({search: value})
+  }
 
-    let handleChange = (event) =>{
-      
-      let searchText = event.target.value.toLowerCase();
 
-      let searchResults = khana.filter((el) => {
-        return el.name.toLowerCase().includes(searchText); 
-      })
-
-      this.setState({
-        filteredData : searchResults,
-      })
-    }
-
-    return(
-      <div>
-          <div className='input'>
-              <input type="text" className='search' placeholder='Search Here' onChange={handleChange} />
-          </div>
-          {this.state.filteredData.map((el,i) =>(
-            <FoodBox foodItem = {el} key={i} />
-          ))
-
-          }     
+  render() {
+    return (
+      <div className='App'>
+        <Search handleSearch={this.handleSearch} search={this.state.search}/>
+        {FoodData.filter((el) => {
+            if(this.state.search == ""){
+                return el
+            } else if (el.name.toLowerCase().includes(this.state.search.toLowerCase())){
+                return el
+            }
+        }).map((el) => {
+            return(
+                <div key={el.id}>
+                    <FoodBox food={el}  />
+                </div>
+            )
+        })
+        }
       </div>
     )
   }
 }
-
-export default App
